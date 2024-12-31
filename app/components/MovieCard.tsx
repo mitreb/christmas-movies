@@ -6,7 +6,7 @@ interface MovieCardProps {
 
 const MovieCard = ({ movie }: MovieCardProps) => {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-gray-800 py-16">
       <h2 className="font-bold text-center text-gray-100">{movie.title}</h2>
     </div>
   );

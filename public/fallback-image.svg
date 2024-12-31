@@ -1,0 +1,20 @@
+<svg width="140" height="209" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="140" height="209" fill="#E63946"/>
+
+  <!-- Snowflakes -->
+  <circle cx="20" cy="30" r="2" fill="#FFFFFF"/>
+  <circle cx="50" cy="50" r="2" fill="#FFFFFF"/>
+  <circle cx="90" cy="20" r="2" fill="#FFFFFF"/>
+  <circle cx="120" cy="70" r="2" fill="#FFFFFF"/>
+  <circle cx="30" cy="100" r="2" fill="#FFFFFF"/>
+  <circle cx="70" cy="150" r="2" fill="#FFFFFF"/>
+  <circle cx="110" cy="130" r="2" fill="#FFFFFF"/>
+  <circle cx="40" cy="180" r="2" fill="#FFFFFF"/>
+  <circle cx="80" cy="200" r="2" fill="#FFFFFF"/>
+
+  <!-- Text -->
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="Arial, sans-serif">
+    No Image
+  </text>
+</svg>

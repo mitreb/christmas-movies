@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import { Movie } from '../types';
 
 interface MovieCardProps {
@@ -6,15 +7,19 @@ interface MovieCardProps {
 }
 
 const MovieCard = ({ movie }: MovieCardProps) => {
+  const [imgSrc, setImgSrc] = useState(movie.image);
+  const fallbackImgSrc = '/fallback-image.svg';
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg relative w-full bg-gray-800 pt-6">
       <div className="relative w-[140px] h-[209px] mx-auto">
         <Image
-          src={movie.image}
+          src={imgSrc}
           alt={movie.title}
           width={140}
           height={209}
           className="object-cover"
+          onError={() => setImgSrc(fallbackImgSrc)}
         />
       </div>
 

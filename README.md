@@ -2,12 +2,16 @@
 
 🎄 Explore Christmas-themed movies with infinite scroll and a festive snowfall effect ❄️.
 
+![Demo](./assets/images/demo.gif)
+
 ## Tech Stack
 
 - **React.js 19**
 - **Next.js 15**
 - **TypeScript**
 - **TailwindCSS**
+- **Motion**
+- **React Snowfall**
 
 ## Getting Started
 
@@ -31,7 +35,3 @@
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
----
-
-Enjoy building and exploring Christmas Movies!

@@ -1,17 +1,38 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Movie } from '../types';
+import { MotionDiv } from './Motion';
+import { PAGE_SIZE } from '../constants';
+
+const stagger = 0.25;
+
+const variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
 
 interface MovieCardProps {
   movie: Movie;
+  index: number;
 }
 
-const MovieCard = ({ movie }: MovieCardProps) => {
+const MovieCard = ({ movie, index }: MovieCardProps) => {
   const [imgSrc, setImgSrc] = useState(movie.image);
   const fallbackImgSrc = '/fallback-image.svg';
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg relative w-full bg-gray-800 pt-6">
+    <MotionDiv
+      variants={variants}
+      initial="hidden"
+      animate="visible"
+      transition={{
+        delay: (index % PAGE_SIZE) * stagger,
+        ease: 'easeInOut',
+        duration: 0.5,
+      }}
+      viewport={{ amount: 0 }}
+      className="max-w-sm rounded overflow-hidden shadow-lg relative w-full bg-gray-800 pt-6"
+    >
       <div className="relative w-[140px] h-[209px] mx-auto">
         <Image
           src={imgSrc}
@@ -68,7 +89,7 @@ const MovieCard = ({ movie }: MovieCardProps) => {
           {movie.description}
         </p>
       </div>
-    </div>
+    </MotionDiv>
   );
 };
 

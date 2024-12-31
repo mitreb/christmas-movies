@@ -1,9 +1,9 @@
 'use client';
 
 import { Movie } from '../types';
-import useMovies from '../hooks/useMovies';
 import MovieCard from './MovieCard';
 import LoadMore from './LoadMore';
+import useMovies from '../hooks/useMovies';
 
 interface MovieListProps {
   initialData: Movie[];
@@ -17,7 +17,7 @@ const MovieList = ({ initialData }: MovieListProps) => {
       <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {movies.map((movie, index) => (
           <div key={index} className="flex justify-center items-center">
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} index={index} />
           </div>
         ))}
       </section>

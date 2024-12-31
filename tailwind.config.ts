@@ -14,6 +14,9 @@ export default {
         'christmas-red': '#C41E3A',
         'dark-red': '#8B0000',
       },
+      backgroundImage: {
+        hero: 'url("/hero.webp")',
+      },
     },
   },
   plugins: [],

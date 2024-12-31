@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { fetchMovies } from '../actions';
 import { Movie } from '../types';
 
-const useMovies = (initialPage: number = 1, initialData: Movie[] = []) => {
+let page = 2;
+
+const useMovies = (initialData: Movie[] = []) => {
   const [data, setData] = useState<Movie[]>(initialData);
   const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(initialPage);
 
-  const loadMore = async () => {
+  const loadMore = useCallback(async () => {
     setIsLoading(true);
     const newMovies = await fetchMovies(page);
     setData((prevData) => {
@@ -17,9 +18,9 @@ const useMovies = (initialPage: number = 1, initialData: Movie[] = []) => {
       );
       return [...prevData, ...uniqueData];
     });
-    setPage((prevPage) => prevPage + 1);
     setIsLoading(false);
-  };
+    page++;
+  }, []);
 
   return { data, isLoading, loadMore };
 };

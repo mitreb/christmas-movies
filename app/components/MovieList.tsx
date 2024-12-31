@@ -14,9 +14,11 @@ const MovieList = ({ initialData }: MovieListProps) => {
 
   return (
     <>
-      <section>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+      <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {movies.map((movie, index) => (
+          <div key={index} className="flex justify-center items-center">
+            <MovieCard movie={movie} />
+          </div>
         ))}
       </section>
 
